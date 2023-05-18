@@ -24,8 +24,8 @@ stages:
         git commit -m "Config update $(Build.BuildId)"
         echo "create branch"
         git branch tmp01
-        echo "checkout main"
-        git checkout HEAD:main
+        echo "checkout $(Build.SourceBranchName)"
+        git checkout $(Build.SourceBranchName)
         echo "merge tmp01"
         git merge tmp01
         echo "push main"
