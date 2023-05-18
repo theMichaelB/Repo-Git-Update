@@ -1,8 +1,6 @@
 # pipeline to build empty IP address list
 # list is used to manage IP deployments to LZs
-
-trigger:
-  - main
+ 
 
 pool:  
   vmImage: ubuntu-latest
@@ -24,15 +22,7 @@ stages:
         git add .
         echo "commit"
         git commit -m "Config update $(Build.BuildId)"
-        echo "create branch"
-        git branch tmp01
-        echo "checkout $(Build.SourceBranchName)"
-        git checkout $(Build.SourceBranchName)
-        echo "merge tmp01"
-        git merge tmp01
-        echo "push main"
+
         git push origin main
-        echo "delete tmp01"
-        git branch -d tmp01
-        git status
+
       displayName: Git Commit
