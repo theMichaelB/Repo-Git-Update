@@ -20,11 +20,17 @@ stages:
         git config user.email "azure@devops"
         echo "Config update $(Build.BuildId)" > build.txt
         git add .
+        echo "commit"
         git commit -m "Config update $(Build.BuildId)"
+        echo "create branch"
         git branch tmp01
+        echo "checkout main"
         git checkout main
+        echo "merge tmp01"
         git merge tmp01
+        echo "push main"
         git push origin main
+        echo "delete tmp01"
         git delete -d tmp01
         git status
       displayName: Git Commit
