@@ -18,12 +18,8 @@ stages:
     - script: |
         git config user.name "azuredevops"
         git config user.email "azure@devops"
-
         echo "Config update $(Build.BuildId)" > build.txt
-      displayName: 'Enable script permissions'
-
-    - bash: |
-        git add --all
+        git add .
         git commit -m "Config update $(Build.BuildId)"
         git push origin main
         git status
