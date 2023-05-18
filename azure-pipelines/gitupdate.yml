@@ -1,8 +1,8 @@
 # pipeline to build empty IP address list
 # list is used to manage IP deployments to LZs
 
-
-trigger: none
+trigger:
+  - main
 
 pool:  
   vmImage: ubuntu-latest
