@@ -25,7 +25,7 @@ stages:
         echo "create branch"
         git branch tmp01
         echo "checkout main"
-        git checkout origin/main
+        git checkout HEAD:main
         echo "merge tmp01"
         git merge tmp01
         echo "push main"
