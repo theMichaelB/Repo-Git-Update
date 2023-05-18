@@ -16,6 +16,8 @@ stages:
       persistCredentials: true
       clean: true
     - script: |
+        git fetch --all
+        git switch $(basename $(Build.SourceBranch))
         git config user.name "azuredevops"
         git config user.email "azure@devops"
         echo "Config update $(Build.BuildId)" > build.txt
