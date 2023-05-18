@@ -4,12 +4,12 @@
 
 trigger: none
 
-pool: default
+pool: Default
 
 stages:
 - stage: Init
   jobs:
-  - job: CreateSubscription
+  - job: Test Gitpush
     steps:
     - checkout: self
       persistCredentials: true
