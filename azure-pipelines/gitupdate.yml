@@ -4,8 +4,9 @@
 
 trigger: none
 
-pool: Default
-
+pool:  
+  vmImage: ubuntu-latest
+  
 stages:
 - stage: Init
   jobs:
